@@ -2,6 +2,9 @@
 
 Note: This repository is a duplicate of another that I have created ([https://github.com/jamesshocking/Spark-REST-API-UDF](https://github.com/jamesshocking/Spark-REST-API-UDF)), albeit demonstrates how to execute REST API calls from Apache Spark using Scala.  The other repository is for those looking for the Python version of this code.
 
+### Note
+Oct 2022 - Since originally writing this demo, the example URL https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json is terminating all requests.  The end result is that it will appear as if the code isn't work.  The problem is that when the Python Requests library executes the request, the remote server terminates the request and an exception is thrown.  The code is still valid, but I recommend trying with a different endpoint
+
 ## Introduction
 
 Apache Spark is a wonderful invention that can solve a great many problems.  Its flexibility and adaptability gives great power but also the opportunity for big mistakes.  One such mistake is executing code on the driver, which you thought would run in a distributed way on the workers.  One such example is when you execute Python code outside of the context of a Dataframe.
